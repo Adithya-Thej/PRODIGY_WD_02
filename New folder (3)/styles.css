@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure buttons do not overflow the circle */
+}
+
+.display {
+    font-size: 2.5em;
+    line-height: 1.2;
+    position: absolute;
+    top: 45%; /* Move slightly higher */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the counter */
+    background: #ffffff; /* Digital screen background */
+    color: rgb(13, 3, 49); /* Digital screen text color */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Shadow for screen effect */
+    font-family: 'Digital', monospace; /* Use a monospace font for digital look */
+    width: 80%; /* Adjust width to fit within the circle */
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px; /* Position controls from the bottom of the circle */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls #start {
+    font-size: 1.3em; /* Adjust size of the start/stop button */
+    padding: 10px 25px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 10px; /* Space between start button and bottom buttons */
+}
+
+.controls #start.stop {
+    background: #dc3545; /* Color change when stopped */
+}
+
+.controls .bottom-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.controls .bottom-buttons button {
+    font-size: 0.9em; /* Adjust size of the reset and lap buttons */
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 80px; /* Set a fixed width for buttons */
+}
+
+.controls #reset {
+    background: #6c757d;
+    color: #fff;
+}
+
+.controls #reset:hover {
+    background: #5a6268;
+}
+
+.controls #lap {
+    background: #28a745;
+    color: #fff;
+}
+
+.controls #lap:hover {
+    background: #218838;
+}
+
+.laps {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 150px;
+    overflow-y: auto;
+}
